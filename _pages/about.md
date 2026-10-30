@@ -6,6 +6,7 @@ permalink: /about/
 ## 안녕하세요, 허지완입니다 👋
 
 - 광운대학교 컴퓨터정보공학부
+- 광운대학교 정보보안동아리 Blackcat
 - 학습 중: Git, JavaScript, Docker
 - 관심 분야: CTF, Bug Bounty, 웹 보안
 - 목표: 하고싶은 보안 분야 찾기
