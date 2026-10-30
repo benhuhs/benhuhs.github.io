@@ -17,7 +17,8 @@ include:
 
 author:
   name: "Benhuhs"
-  bio: "보안을 공부하고 있습니다."
+  avatar: "/assets/images/Blackcat jpg.jpg"
+  bio: "광운대 컴퓨터정보공학부 | Blackcat | HSPACE Knights Frontier 3기"
   location: "Seoul, Korea"
   links:
     - label: "GitHub"

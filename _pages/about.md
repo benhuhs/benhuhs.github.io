@@ -7,7 +7,8 @@ permalink: /about/
 
 - 광운대학교 컴퓨터정보공학부
 - 광운대학교 정보보안동아리 Blackcat
-- 학습 중: Git, JavaScript, Docker
+- HSPACE Knight Frontier 3기
+- 학습 중: Git, JavaScript, 보안
 - 관심 분야: CTF, Bug Bounty, 웹 보안
 - 목표: 하고싶은 보안 분야 찾기
 
