@@ -15,3 +15,12 @@
     try { localStorage.setItem('theme', next); } catch (e) {}
   });
 })();
+
+(function () {
+  var btn = document.querySelector('.dd-btn'), menu = document.getElementById('dd-cats');
+  if (!btn || !menu) return;
+  function set(open) { btn.setAttribute('aria-expanded', open); menu.hidden = !open; }
+  btn.addEventListener('click', function (e) { e.stopPropagation(); set(menu.hidden); });
+  document.addEventListener('click', function (e) { if (!menu.contains(e.target)) set(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { set(false); btn.focus(); } });
+})();

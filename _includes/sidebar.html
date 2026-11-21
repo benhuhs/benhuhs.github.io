@@ -23,13 +23,6 @@
   </div>
   {% endunless %}
 
-  {% unless page.url == '/search/' %}
-  <form class="side-card search-form" action="{{ '/search/' | relative_url }}" method="get" role="search">
-    <label class="side-label" for="side-q">검색</label>
-    <input id="side-q" class="search-input" type="search" name="q" placeholder="글 검색" autocomplete="off">
-  </form>
-  {% endunless %}
-
   {% unless page.layout == 'home' %}
   <nav class="side-card side-cats" aria-label="카테고리">
     <p class="side-label">카테고리</p>
