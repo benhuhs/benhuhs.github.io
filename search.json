@@ -1,0 +1,18 @@
+---
+layout: null
+permalink: /search.json
+---
+[
+{%- for post in site.posts -%}
+{%- assign c = site.data.categories | where: "slug", post.categories.first | first -%}
+  {
+    "title": {{ post.title | jsonify }},
+    "url": {{ post.url | relative_url | jsonify }},
+    "date": {{ post.date | date: "%Y.%m.%d" | jsonify }},
+    "category": {{ c.name | default: "" | jsonify }},
+    "tags": {{ post.tags | join: " " | jsonify }},
+    "desc": {{ post.description | default: "" | jsonify }},
+    "content": {{ post.content | strip_html | normalize_whitespace | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{%- endfor -%}
+]

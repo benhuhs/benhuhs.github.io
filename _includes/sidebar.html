@@ -19,6 +19,13 @@
     <a class="side-link" href="https://github.com/{{ site.author.github }}" rel="noopener"><span>GitHub</span><span aria-hidden="true">↗</span></a>
   </div>
 
+  {% unless page.url == '/search/' %}
+  <form class="side-card search-form" action="{{ '/search/' | relative_url }}" method="get" role="search">
+    <label class="side-label mono" for="side-q">Search</label>
+    <input id="side-q" class="search-input" type="search" name="q" placeholder="글 검색" autocomplete="off">
+  </form>
+  {% endunless %}
+
   <nav class="side-card side-cats" aria-label="카테고리">
     <p class="side-label mono">Categories</p>
     <ul>

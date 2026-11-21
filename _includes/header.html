@@ -5,6 +5,7 @@
     <nav class="nav" aria-label="주요 메뉴">
       <a href="{{ '/#archive' | relative_url }}"{% if page.layout == 'category' %} aria-current="page"{% endif %}>기록</a>
       <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>소개</a>
+      <a href="{{ '/search/' | relative_url }}"{% if page.url == '/search/' %} aria-current="page"{% endif %}>검색</a>
       <a href="https://github.com/{{ site.author.github }}" rel="noopener">GitHub<span class="ext" aria-hidden="true">↗</span></a>
       <button class="theme-toggle" type="button" aria-label="다크 모드 전환">
         <svg class="i-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>

@@ -8,26 +8,21 @@ permalink: /about/
     <img class="avatar" src="{{ '/assets/img/blackcat.jpg' | relative_url }}" alt="Blackcat 보안 동아리 로고" width="96" height="96">
     <div>
       <h1 class="page-title">허지완 <span class="handle mono">@benhuhs</span></h1>
-      <p class="page-sub">보안 분야 탐색 중인 컴퓨터정보공학 전공생</p>
+      <p class="page-sub">광운대학교 컴퓨터정보공학부에 재학하고 있는 허지완입니다.<br>보안에 관심을 갖고 공부하고 있습니다.</p>
     </div>
   </div>
 
   <dl class="facts">
-    <div><dt class="mono">학교</dt><dd>광운대학교 컴퓨터정보공학부</dd></div>
-    <div><dt class="mono">동아리</dt><dd>정보보안동아리 Blackcat</dd></div>
-    <div><dt class="mono">활동</dt><dd>HSPACE Knights Frontier 3기</dd></div>
-    <div><dt class="mono">관심</dt><dd>웹 보안, CTF, Bug Bounty</dd></div>
-    <div><dt class="mono">학습 중</dt><dd>Git, JavaScript, 보안 기초</dd></div>
+    <div><dt class="mono">공부 중인 것</dt><dd>Git, JavaScript, 보안 기초</dd></div>
     <div><dt class="mono">목표</dt><dd>깊게 파고들 보안 분야 찾기</dd></div>
+    <div><dt class="mono">연락</dt><dd class="facts-links">
+      <a href="https://github.com/{{ site.author.github }}" rel="noopener">GitHub ↗</a>
+      {% if site.author.email != "" %}<a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>{% endif %}
+    </dd></div>
   </dl>
 
   <div class="prose about-body">
     <h2>이 블로그</h2>
     <p>공부하면서 배운 내용, 풀어 본 문제, 오래 막혔던 지점을 남기는 곳. 잘 정리된 정답보다 과정 위주의 기록.</p>
   </div>
-
-  <p class="about-links mono">
-    <a href="https://github.com/{{ site.author.github }}" rel="noopener">GitHub ↗</a>
-    {% if site.author.email != "" %}<a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>{% endif %}
-  </p>
 </section>
