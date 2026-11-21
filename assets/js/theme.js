@@ -49,6 +49,7 @@
   });
   if (mq.addEventListener) mq.addEventListener('change', sync);
   sync();
+  requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('side-ready'); }); });
 })();
 
 (function () {

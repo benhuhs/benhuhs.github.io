@@ -34,6 +34,7 @@ layout: default
 <section class="section" id="recent" aria-labelledby="recent-h">
   <div class="section-head">
     <h2 id="recent-h">최신 기록</h2>
+    {% if site.posts.size > 5 %}<a class="head-link" href="{{ '/posts/' | relative_url }}">모든 기록 보기</a>{% endif %}
   </div>
   {% if site.posts.size > 0 %}
   <ul class="post-list">
@@ -41,9 +42,6 @@ layout: default
       {% include post-item.html post=post show_cat=true %}
     {% endfor %}
   </ul>
-  {% if site.posts.size > 5 %}
-  <p class="more"><a class="btn btn-line" href="{{ '/posts/' | relative_url }}">모든 기록 보기 <span aria-hidden="true">→</span></a></p>
-  {% endif %}
   {% else %}
   <p class="empty">첫 기록 준비 중</p>
   {% endif %}
