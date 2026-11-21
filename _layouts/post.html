@@ -1,0 +1,30 @@
+---
+layout: default
+---
+{% assign c = site.data.categories | where: "slug", page.categories.first | first %}
+<article class="post wrap">
+  <header class="post-head">
+    <p class="post-meta mono">
+      {% if c %}<a href="{{ '/categories/' | append: c.slug | append: '/' | relative_url }}">{{ c.name }}</a><span aria-hidden="true">·</span>{% endif %}
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>
+    </p>
+    <h1 class="post-h1">{{ page.title }}</h1>
+    {% if page.description %}<p class="post-desc">{{ page.description }}</p>{% endif %}
+    {% if page.tags.size > 0 %}
+    <p class="post-tags mono">{% for t in page.tags %}<span>#{{ t }}</span>{% endfor %}</p>
+    {% endif %}
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  <nav class="post-nav" aria-label="이전 글, 다음 글">
+    {% if page.previous %}
+    <a class="prev" href="{{ page.previous.url | relative_url }}"><span>이전 글</span>{{ page.previous.title }}</a>
+    {% else %}<span></span>{% endif %}
+    {% if page.next %}
+    <a class="next" href="{{ page.next.url | relative_url }}"><span>다음 글</span>{{ page.next.title }}</a>
+    {% endif %}
+  </nav>
+</article>

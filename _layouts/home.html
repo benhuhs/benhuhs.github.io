@@ -1,0 +1,48 @@
+---
+layout: default
+---
+<section class="hero wrap">
+  <h1 class="hero-title">배운 것, 푼 것,<br>막혔던 것의 기록</h1>
+  <p class="hero-sub">
+    광운대학교 컴퓨터정보공학부 허지완.
+    보안 동아리 Blackcat, HSPACE Knights Frontier 3기 활동 중.
+  </p>
+  <p class="hero-tags mono">
+    <span>Web Security</span><span>CTF</span><span>Bug Bounty</span>
+  </p>
+</section>
+
+<section class="section wrap" id="archive" aria-labelledby="archive-h">
+  <div class="section-head">
+    <h2 id="archive-h">카테고리</h2>
+    <span class="section-meta mono">{{ site.data.categories | size }} sections · {{ site.posts | size }} posts</span>
+  </div>
+  <ol class="cat-list">
+    {% for c in site.data.categories %}
+    {% assign posts = site.categories[c.slug] %}
+    <li>
+      <a class="cat-row" href="{{ '/categories/' | append: c.slug | append: '/' | relative_url }}">
+        <span class="cat-no mono">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+        <span class="cat-name">{{ c.name }}</span>
+        <span class="cat-desc">{{ c.desc }}</span>
+        <span class="cat-count mono">{% if posts %}{{ posts | size }}{% else %}0{% endif %}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="section wrap" aria-labelledby="recent-h">
+  <div class="section-head">
+    <h2 id="recent-h">최근 기록</h2>
+  </div>
+  {% if site.posts.size > 0 %}
+  <ul class="post-list">
+    {% for post in site.posts limit: 8 %}
+      {% include post-item.html post=post show_cat=true %}
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty">첫 기록 준비 중</p>
+  {% endif %}
+</section>

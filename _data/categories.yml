@@ -1,0 +1,19 @@
+# 카테고리 목록. 글 머리말의 category 값에 slug를 그대로 쓰면 됨
+- slug: dev
+  name: 개발
+  desc: 만든 것, 막힌 지점, 해결 과정
+- slug: ctf
+  name: CTF / Wargame
+  desc: 문제 풀이와 write-up
+- slug: bugbounty
+  name: Bug Bounty
+  desc: 취약점 분석과 제보 기록
+- slug: techdocs
+  name: 블로그 / 기술문서
+  desc: 공부한 기술의 정리 노트
+- slug: paper
+  name: 논문 / 컨퍼런스
+  desc: 논문 리뷰와 발표 정리
+- slug: contest
+  name: 공모전 / 자격증
+  desc: 대회·자격증 준비 과정과 후기

@@ -1,41 +1,37 @@
-remote_theme: "mmistakes/minimal-mistakes@4.26.2"
-minimal_mistakes_skin: "dark"
-
-title: "Benhuhs's Blog"
-description: "개발 · CTF · Bug Bounty 기록"
+title: benhuhs.log
+description: 광운대 컴퓨터정보공학부 허지완의 개발·보안 학습 기록
 url: "https://benhuhs.github.io"
-locale: "ko-KR"
-
-plugins:
-  - jekyll-remote-theme
-  - jekyll-include-cache
-  - jekyll-paginate
-  - jekyll-sitemap
-
-include:
-  - _pages
+baseurl: ""
+lang: ko-KR
+timezone: Asia/Seoul
 
 author:
-  name: "Benhuhs"
-  avatar: "/assets/images/Blackcat jpg.jpg"
-  bio: "광운대 컴퓨터정보공학부 | Blackcat | HSPACE Knights Frontier 3기"
-  location: "Seoul, Korea"
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/benhuhs"
+  name: 허지완
+  handle: benhuhs
+  github: benhuhs
+  email: ""            # 공개해도 되는 메일이 있으면 입력
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+permalink: /:categories/:year/:month/:title/
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
 
 defaults:
   - scope:
       path: ""
       type: posts
     values:
-      layout: single
-      author_profile: true
-      read_time: true
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: true
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

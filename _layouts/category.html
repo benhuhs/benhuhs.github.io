@@ -1,0 +1,23 @@
+---
+layout: default
+---
+{% assign c = site.data.categories | where: "slug", page.slug | first %}
+{% assign posts = site.categories[page.slug] %}
+<section class="page-head wrap">
+  <a class="back mono" href="{{ '/#archive' | relative_url }}">← 전체 카테고리</a>
+  <h1 class="page-title">{{ c.name }}</h1>
+  <p class="page-sub">{{ c.desc }}</p>
+</section>
+
+<section class="section wrap">
+  {% if posts and posts.size > 0 %}
+  <p class="section-meta mono">{{ posts | size }} posts</p>
+  <ul class="post-list">
+    {% for post in posts %}
+      {% include post-item.html post=post %}
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty">아직 이 카테고리의 기록 없음</p>
+  {% endif %}
+</section>
