@@ -1,33 +1,37 @@
 <aside class="sidebar" aria-label="프로필과 카테고리">
+  {% unless page.url == '/about/' %}
   <div class="side-card profile">
     <img class="side-avatar" src="{{ '/assets/img/blackcat.jpg' | relative_url }}" alt="" width="64" height="64">
-    <p class="side-label mono">About me</p>
+    <p class="side-label side-extra">소개</p>
     <p class="side-name">{{ site.author.name }}</p>
-    <p class="side-handle mono">@{{ site.author.handle }}</p>
+    <p class="side-handle mono side-extra">@{{ site.author.handle }}</p>
 
-    <p class="side-label mono">Education</p>
-    <ul class="side-list">
-      <li><strong>광운대학교</strong><span>컴퓨터정보공학부</span></li>
-    </ul>
+    <div class="side-extra">
+      <p class="side-label">학력</p>
+      <ul class="side-list">
+        <li><strong>광운대학교</strong><span>컴퓨터정보공학부</span></li>
+      </ul>
 
-    <p class="side-label mono">Experience</p>
-    <ul class="side-list">
-      <li><strong>Blackcat</strong><span>정보보안 동아리</span></li>
-      <li><strong>Knights Frontier</strong><span>HSPACE 3기</span></li>
-    </ul>
+      <p class="side-label">활동</p>
+      <ul class="side-list">
+        <li><strong>Blackcat</strong><span>정보보안 동아리</span></li>
+        <li><strong>Knights Frontier</strong><span>HSPACE 3기</span></li>
+      </ul>
 
-    <a class="side-link" href="https://github.com/{{ site.author.github }}" rel="noopener"><span>GitHub</span><span aria-hidden="true">↗</span></a>
+      <a class="side-link" href="https://github.com/{{ site.author.github }}" rel="noopener"><span>GitHub</span><span aria-hidden="true">↗</span></a>
+    </div>
   </div>
+  {% endunless %}
 
   {% unless page.url == '/search/' %}
   <form class="side-card search-form" action="{{ '/search/' | relative_url }}" method="get" role="search">
-    <label class="side-label mono" for="side-q">Search</label>
+    <label class="side-label" for="side-q">검색</label>
     <input id="side-q" class="search-input" type="search" name="q" placeholder="글 검색" autocomplete="off">
   </form>
   {% endunless %}
 
   <nav class="side-card side-cats" aria-label="카테고리">
-    <p class="side-label mono">Categories</p>
+    <p class="side-label">카테고리</p>
     <ul>
       {% for c in site.data.categories %}
       {% assign cp = site.categories[c.slug] %}

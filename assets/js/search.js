@@ -54,7 +54,7 @@
     var terms = q.toLowerCase().split(/\s+/).filter(Boolean);
     if (!terms.length) {
       list.innerHTML = '';
-      status.textContent = posts.length + ' posts';
+      status.textContent = '전체 글 ' + posts.length + '개';
       return;
     }
     var hits = posts
@@ -62,7 +62,7 @@
       .filter(function (r) { return r.s > 0; })
       .sort(function (a, b) { return b.s - a.s; });
 
-    status.textContent = hits.length ? hits.length + ' results' : '';
+    status.textContent = hits.length ? '검색 결과 ' + hits.length + '개' : '';
     if (!hits.length) {
       list.innerHTML = '<li class="empty">“' + escapeHtml(q) + '”에 맞는 글이 없습니다.</li>';
       return;

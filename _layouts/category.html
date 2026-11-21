@@ -18,7 +18,7 @@ layout: default
 
 <section class="section">
   {% if posts and posts.size > 0 %}
-  <p class="section-meta mono">{{ posts | size }} posts</p>
+  <p class="section-meta">글 {{ posts | size }}개</p>
   <ul class="post-list">
     {% for post in posts %}
       {% include post-item.html post=post %}

@@ -2,27 +2,23 @@
 layout: default
 ---
 <section class="hero">
-  <p class="eyebrow mono">Personal study archive</p>
   <h1 class="hero-title">잊지 않으려고<br>적어 두는 곳</h1>
 </section>
 
 <section class="section" id="archive" aria-labelledby="archive-h">
   <div class="section-head">
     <h2 id="archive-h">카테고리</h2>
-    <span class="section-meta mono">{{ site.data.categories | size }} sections · {{ site.posts | size }} posts</span>
+    <span class="section-meta">카테고리 {{ site.data.categories | size }}개 · 글 {{ site.posts | size }}개</span>
   </div>
-  <ol class="cat-grid">
+  <ol class="cat-list">
     {% for c in site.data.categories %}
     {% assign posts = site.categories[c.slug] %}
     <li>
-      <a class="cat-card" href="{{ '/categories/' | append: c.slug | append: '/' | relative_url }}">
-        <span class="cat-top">
-          <span class="cat-no mono">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
-          <span class="cat-arrow" aria-hidden="true">↗</span>
-        </span>
+      <a class="cat-row" href="{{ '/categories/' | append: c.slug | append: '/' | relative_url }}">
+        <span class="cat-no mono">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
         <span class="cat-name">{{ c.name }}</span>
         <span class="cat-desc">{{ c.desc }}</span>
-        <span class="cat-count mono">{% if posts %}{{ posts | size }}{% else %}0{% endif %} posts</span>
+        <span class="cat-count">글 {% if posts %}{{ posts | size }}{% else %}0{% endif %}개</span>
       </a>
     </li>
     {% endfor %}
