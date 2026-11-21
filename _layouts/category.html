@@ -4,7 +4,7 @@ layout: default
 {% assign c = site.data.categories | where: "slug", page.slug | first %}
 {% assign posts = site.categories[page.slug] %}
 <section class="page-head">
-  <a class="back" href="{{ '/#archive' | relative_url }}">← 전체 카테고리</a>
+  <a class="back" href="{{ '/posts/' | relative_url }}">← 모든 기록</a>
   <h1 class="page-title">{{ c.name }}</h1>
   <p class="page-sub">{{ c.desc }}</p>
 </section>
