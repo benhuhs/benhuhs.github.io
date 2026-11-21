@@ -3,13 +3,20 @@ layout: default
 ---
 {% assign c = site.data.categories | where: "slug", page.slug | first %}
 {% assign posts = site.categories[page.slug] %}
-<section class="page-head wrap">
+<section class="page-head">
   <a class="back mono" href="{{ '/#archive' | relative_url }}">← 전체 카테고리</a>
   <h1 class="page-title">{{ c.name }}</h1>
   <p class="page-sub">{{ c.desc }}</p>
 </section>
 
-<section class="section wrap">
+<nav class="cat-btns" aria-label="카테고리 전환">
+  {% for cc in site.data.categories %}
+  {% assign cps = site.categories[cc.slug] %}
+  <a href="{{ '/categories/' | append: cc.slug | append: '/' | relative_url }}"{% if cc.slug == page.slug %} aria-current="page"{% endif %}>{{ cc.name }} <span class="mono">{% if cps %}{{ cps | size }}{% else %}0{% endif %}</span></a>
+  {% endfor %}
+</nav>
+
+<section class="section">
   {% if posts and posts.size > 0 %}
   <p class="section-meta mono">{{ posts | size }} posts</p>
   <ul class="post-list">

@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-<section class="hero wrap">
+<section class="hero">
+  <p class="eyebrow mono">Personal security log</p>
   <h1 class="hero-title">배운 것, 푼 것,<br>막혔던 것의 기록</h1>
   <p class="hero-sub">
     광운대학교 컴퓨터정보공학부 허지완.
@@ -12,27 +13,30 @@ layout: default
   </p>
 </section>
 
-<section class="section wrap" id="archive" aria-labelledby="archive-h">
+<section class="section" id="archive" aria-labelledby="archive-h">
   <div class="section-head">
     <h2 id="archive-h">카테고리</h2>
     <span class="section-meta mono">{{ site.data.categories | size }} sections · {{ site.posts | size }} posts</span>
   </div>
-  <ol class="cat-list">
+  <ol class="cat-grid">
     {% for c in site.data.categories %}
     {% assign posts = site.categories[c.slug] %}
     <li>
-      <a class="cat-row" href="{{ '/categories/' | append: c.slug | append: '/' | relative_url }}">
-        <span class="cat-no mono">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+      <a class="cat-card" href="{{ '/categories/' | append: c.slug | append: '/' | relative_url }}">
+        <span class="cat-top">
+          <span class="cat-no mono">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+          <span class="cat-arrow" aria-hidden="true">↗</span>
+        </span>
         <span class="cat-name">{{ c.name }}</span>
         <span class="cat-desc">{{ c.desc }}</span>
-        <span class="cat-count mono">{% if posts %}{{ posts | size }}{% else %}0{% endif %}</span>
+        <span class="cat-count mono">{% if posts %}{{ posts | size }}{% else %}0{% endif %} posts</span>
       </a>
     </li>
     {% endfor %}
   </ol>
 </section>
 
-<section class="section wrap" aria-labelledby="recent-h">
+<section class="section" aria-labelledby="recent-h">
   <div class="section-head">
     <h2 id="recent-h">최근 기록</h2>
   </div>
