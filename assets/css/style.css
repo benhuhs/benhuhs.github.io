@@ -245,7 +245,7 @@ img { max-width: 100%; height: auto; }
 .handle { font-size: 15px; font-weight: 400; color: var(--muted); letter-spacing: 0; vertical-align: middle; }
 .facts { margin: 48px 0 0; border-top: 1px solid var(--text); }
 .facts div { display: grid; grid-template-columns: 112px 1fr; gap: 16px; padding: 13px 4px; border-bottom: 1px solid var(--line); }
-.facts dt { font-size: 12.5px; color: var(--muted); padding-top: 2px; }
+.facts dt { font-size: 14px; font-weight: 500; color: var(--muted); }
 .facts dd { margin: 0; }
 .about-body { margin-top: 48px; }
 .about-body h2 { margin-top: 0; font-size: 15px; font-weight: 600; }
