@@ -90,7 +90,7 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ---------- shell + sidebar ---------- */
-.shell { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 56px; align-items: start; padding-top: 40px; }
+.shell { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 56px; align-items: start; padding-top: 40px; }
 .main { min-width: 0; }
 .sidebar { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 14px; }
 .side-card { padding: 20px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
@@ -347,8 +347,6 @@ img { max-width: 100%; height: auto; }
 .side-handle { margin-bottom: 4px; }
 .profile div.side-extra > .side-label:first-child { margin-top: 22px; }
 @media (min-width: 1360px) {
-  .shell { grid-template-columns: 260px minmax(0, 1fr); column-gap: 96px; }
-  .sidebar { margin-left: -64px; }
 }
 
 .hero-kicker { margin: 0; font-size: 16px; font-weight: 500; color: var(--muted); }
@@ -379,3 +377,59 @@ img { max-width: 100%; height: auto; }
 .side-list li { border-left-color: var(--accent); }
 .logo .dot { color: var(--accent); }
 .dd-menu a:hover { background: var(--tint); }
+
+/* ---------- v4 tweaks ---------- */
+.back { font-family: var(--sans); font-size: 14.5px; letter-spacing: 0; }
+@media (min-width: 1360px) {
+  .shell { grid-template-columns: 220px minmax(0, 1fr); column-gap: 88px; }
+  .sidebar { margin-left: -56px; }
+}
+.side-card { padding: 18px; }
+.section-head h2 { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; }
+.section-head { padding-bottom: 14px; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+#archive, #recent { scroll-margin-top: 110px; }
+
+/* ---------- navigation sidebar (non-home pages) ---------- */
+.side-nav { padding: 10px; }
+.side-nav ul { list-style: none; margin: 0; padding: 0; }
+.side-nav a { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 8px; font-size: 15.5px; color: var(--text); }
+.side-nav .ico { flex-shrink: 0; color: var(--muted); }
+.side-nav .n { margin-left: auto; font-size: 12.5px; color: var(--muted); }
+.side-nav a:hover { background: var(--tint); }
+.side-nav a[aria-current="page"] { background: var(--tint); color: var(--accent); font-weight: 600; }
+.side-nav a[aria-current="page"] .ico { color: var(--accent); }
+.nav-top { padding-bottom: 10px !important; margin-bottom: 14px !important; border-bottom: 1px solid var(--line); }
+.side-nav .side-label { margin: 0 12px 6px; }
+@media (max-width: 640px) { .side-nav { display: none; } }
+
+/* ---------- collapsible sidebar (non-home pages) ---------- */
+.menu-btn { margin: 0 -6px 0 -4px; color: var(--text); }
+html.side-hidden body:not(.layout-home) .shell { grid-template-columns: minmax(0, 1fr); }
+html.side-hidden body:not(.layout-home) .sidebar { display: none; }
+@media (max-width: 900px) {
+  body:not(.layout-home) .sidebar {
+    display: none; position: fixed; inset: 0; z-index: 40; margin: 0; padding: 0; top: 0;
+    background: rgba(0, 0, 0, .35);
+  }
+  html.side-open body:not(.layout-home) .sidebar { display: block; }
+  body:not(.layout-home) .side-nav {
+    display: block; position: absolute; top: 0; left: 0; bottom: 0; width: min(280px, 82vw);
+    border-radius: 0 14px 14px 0; border-left: 0; overflow: auto; padding: 24px 10px; background: var(--bg);
+  }
+}
+
+/* ---------- category title search ---------- */
+.cat-search { display: flex; align-items: center; gap: 10px; max-width: 520px; margin: 0 0 22px; padding: 0 14px; height: 48px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--muted); }
+.cat-search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--tint); }
+.cat-search input { flex: 1; min-width: 0; height: 100%; border: 0; outline: 0; background: none; font: inherit; font-size: 15.5px; color: var(--text); }
+.cat-search input::placeholder { color: var(--muted); }
+.cat-search input::-webkit-search-cancel-button { filter: grayscale(1); opacity: .55; cursor: pointer; }
+
+/* ---------- section titles, more link, search anchor ---------- */
+.section-head h2 { font-size: 26px; font-weight: 700; letter-spacing: -0.025em; }
+.more { display: flex; justify-content: center; margin: 28px 0 0; }
+#search { scroll-margin-top: 110px; }
+.more .btn span { margin-left: 6px; }

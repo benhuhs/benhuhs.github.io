@@ -2,13 +2,18 @@
 <header class="site-header">
   <div class="wrap">
     <div class="bar">
+      {% unless page.layout == 'home' %}
+      <button class="icon-btn menu-btn" type="button" aria-controls="side" aria-expanded="true" aria-label="사이드바 열고 닫기">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      {% endunless %}
       <a class="logo" href="{{ '/' | relative_url }}">
         <img class="logo-img" src="{{ '/assets/img/blackcat.jpg' | relative_url }}" alt="" width="28" height="28">
         <span>benhuhs<span class="dot">.</span>log</span>
       </a>
       <span class="bar-sep" aria-hidden="true"></span>
       <nav class="nav" aria-label="주요 메뉴">
-        <a href="{{ '/#recent' | relative_url }}">기록</a>
+        <a href="{{ '/posts/' | relative_url }}"{% if page.url == '/posts/' %} aria-current="page"{% endif %}>기록</a>
         <div class="dd">
           <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-cats">카테고리
             <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -21,7 +26,7 @@
         </div>
         <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>소개</a>
       </nav>
-      <a class="icon-btn bar-right" href="{{ '/search/' | relative_url }}" aria-label="검색">
+      <a class="icon-btn bar-right search-link" href="{{ '/posts/#search' | relative_url }}" aria-label="검색">
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
       </a>
       <button class="theme-toggle icon-btn" type="button" aria-label="다크 모드 전환">

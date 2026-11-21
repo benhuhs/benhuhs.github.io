@@ -6,7 +6,7 @@ layout: default
   <h1 class="hero-name">benhuhs</h1>
   <p class="hero-line">보안과 개발을 공부하며<br>배운 것과 막혔던 과정의 기록</p>
   <p class="hero-actions">
-    <a class="btn btn-fill" href="#recent">전체 글 보기</a>
+    <a class="btn btn-fill" href="#recent">최신 기록 보기</a>
     <a class="btn btn-line" href="#archive">카테고리 보기</a>
   </p>
 </section>
@@ -33,14 +33,17 @@ layout: default
 
 <section class="section" id="recent" aria-labelledby="recent-h">
   <div class="section-head">
-    <h2 id="recent-h">최근 기록</h2>
+    <h2 id="recent-h">최신 기록</h2>
   </div>
   {% if site.posts.size > 0 %}
   <ul class="post-list">
-    {% for post in site.posts limit: 8 %}
+    {% for post in site.posts limit: 5 %}
       {% include post-item.html post=post show_cat=true %}
     {% endfor %}
   </ul>
+  {% if site.posts.size > 5 %}
+  <p class="more"><a class="btn btn-line" href="{{ '/posts/' | relative_url }}">모든 기록 보기 <span aria-hidden="true">→</span></a></p>
+  {% endif %}
   {% else %}
   <p class="empty">첫 기록 준비 중</p>
   {% endif %}

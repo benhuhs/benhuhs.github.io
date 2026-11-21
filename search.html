@@ -1,20 +1,10 @@
 ---
-layout: default
-title: 검색
+layout: null
 permalink: /search/
 ---
-<section class="page-head">
-  <h1 class="page-title">검색</h1>
-  <p class="page-sub">제목, 본문, 태그, 카테고리에서 찾습니다.</p>
-</section>
-
-<section class="section">
-  <form class="search-form search-form-lg" action="{{ '/search/' | relative_url }}" method="get" role="search">
-    <label class="sr-only" for="search-page-q">검색어</label>
-    <input id="search-page-q" class="search-input" type="search" name="q" placeholder="검색어를 입력하세요" autocomplete="off" data-search-input>
-  </form>
-  <p class="section-meta search-status" data-search-status aria-live="polite"></p>
-  <ul class="post-list" data-search-results></ul>
-</section>
-
-<script src="{{ '/assets/js/search.js' | relative_url }}?v={{ site.time | date: '%s' }}" data-index="{{ '/search.json' | relative_url }}" defer></script>
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta http-equiv="refresh" content="0; url={{ '/posts/#search' | relative_url }}">
+<link rel="canonical" href="{{ '/posts/' | relative_url }}">
+<title>모든 기록으로 이동</title></head>
+<body><a href="{{ '/posts/#search' | relative_url }}">모든 기록에서 검색하기</a></body></html>
