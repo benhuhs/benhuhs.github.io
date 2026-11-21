@@ -4,7 +4,6 @@
     <p class="footer-meta">
       <span>© {{ 'now' | date: '%Y' }} {{ site.author.handle }}</span>
       <a href="https://github.com/{{ site.author.github }}" rel="noopener">GitHub</a>
-      {% if site.author.email != "" %}<a href="mailto:{{ site.author.email }}">Email</a>{% endif %}
       <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
     </p>
   </div>
