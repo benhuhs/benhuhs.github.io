@@ -394,7 +394,7 @@ img { max-width: 100%; height: auto; }
 @media (min-width: 901px) {
   /* closing: the sidebar sinks and fades first, then the column folds away.
      opening: the column comes back first, then the sidebar rises into place. */
-  body:not(.layout-home) .side-nav { width: 210px; transform-origin: 50% 100%; }
+  body:not(.layout-home) .side-nav { width: 240px; transform-origin: 50% 100%; }
   html.side-ready body:not(.layout-home) .shell { transition: grid-template-columns .3s ease .05s, column-gap .3s ease .05s; }
   html.side-ready body:not(.layout-home) .side-nav { transition: transform .32s cubic-bezier(.3,.7,.4,1) .2s, opacity .26s ease .2s; }
   html.side-ready.side-hidden body:not(.layout-home) .shell { transition-delay: .2s; }
@@ -438,10 +438,11 @@ img { max-width: 100%; height: auto; }
 
 /* ---------- tighter sidebar ↔ content spacing ---------- */
 @media (min-width: 901px) {
-  .shell { grid-template-columns: 210px minmax(0, 1fr); column-gap: 40px; }
+  .shell { grid-template-columns: 240px minmax(0, 1fr); column-gap: 40px; }
 }
 @media (min-width: 1360px) {
-  .shell { grid-template-columns: 210px minmax(0, 1fr); column-gap: 36px; }
+  .shell { grid-template-columns: 240px minmax(0, 1fr); column-gap: 36px; }
+  .sidebar { width: 240px; justify-self: start; }
 }
 
 .head-link { font-size: 15px; color: var(--muted); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
