@@ -392,10 +392,19 @@ img { max-width: 100%; height: auto; }
 .menu-btn { margin: 0 -6px 0 -4px; color: var(--text); }
 /* desktop: animate the sidebar column closed instead of removing it */
 @media (min-width: 901px) {
-  html.side-ready body:not(.layout-home) .shell { transition: grid-template-columns .32s ease, column-gap .32s ease; }
-  html.side-ready body:not(.layout-home) .sidebar { transition: opacity .2s ease, visibility .32s; }
+  /* closing: the sidebar sinks and fades first, then the column folds away.
+     opening: the column comes back first, then the sidebar rises into place. */
+  body:not(.layout-home) .side-nav { width: 210px; transform-origin: 50% 100%; }
+  html.side-ready body:not(.layout-home) .shell { transition: grid-template-columns .3s ease .05s, column-gap .3s ease .05s; }
+  html.side-ready body:not(.layout-home) .side-nav { transition: transform .32s cubic-bezier(.3,.7,.4,1) .2s, opacity .26s ease .2s; }
+  html.side-ready.side-hidden body:not(.layout-home) .shell { transition-delay: .2s; }
+  html.side-ready.side-hidden body:not(.layout-home) .side-nav { transition: transform .24s cubic-bezier(.5,0,.75,0), opacity .2s ease .04s; }
   html.side-hidden body:not(.layout-home) .shell { grid-template-columns: 0px minmax(0, 1fr); column-gap: 0; }
-  html.side-hidden body:not(.layout-home) .sidebar { opacity: 0; visibility: hidden; overflow: hidden; min-width: 0; margin-left: 0; }
+  html.side-hidden body:not(.layout-home) .sidebar { min-width: 0; overflow: visible; pointer-events: none; }
+  html.side-hidden body:not(.layout-home) .side-nav { transform: translateY(48px) scale(.94); opacity: 0; }
+  html.side-ready body:not(.layout-home) .sidebar { transition: visibility 0s linear .5s; }
+  html.side-hidden body:not(.layout-home) .sidebar { visibility: hidden; }
+  html.side-ready:not(.side-hidden) body:not(.layout-home) .sidebar { transition-delay: 0s; }
 }
 @media (max-width: 900px) {
   body:not(.layout-home) .sidebar {
