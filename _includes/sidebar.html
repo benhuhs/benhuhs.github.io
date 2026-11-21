@@ -30,6 +30,7 @@
   </form>
   {% endunless %}
 
+  {% unless page.layout == 'home' %}
   <nav class="side-card side-cats" aria-label="카테고리">
     <p class="side-label">카테고리</p>
     <ul>
@@ -44,4 +45,5 @@
       {% endfor %}
     </ul>
   </nav>
+  {% endunless %}
 </aside>

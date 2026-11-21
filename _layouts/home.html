@@ -10,11 +10,11 @@ layout: default
     <h2 id="archive-h">카테고리</h2>
     <span class="section-meta">카테고리 {{ site.data.categories | size }}개 · 글 {{ site.posts | size }}개</span>
   </div>
-  <ol class="cat-list">
+  <ol class="cat-grid">
     {% for c in site.data.categories %}
     {% assign posts = site.categories[c.slug] %}
     <li>
-      <a class="cat-row" href="{{ '/categories/' | append: c.slug | append: '/' | relative_url }}">
+      <a class="cat-card" href="{{ '/categories/' | append: c.slug | append: '/' | relative_url }}">
         <span class="cat-no mono">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
         <span class="cat-name">{{ c.name }}</span>
         <span class="cat-desc">{{ c.desc }}</span>
