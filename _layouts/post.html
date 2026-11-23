@@ -3,6 +3,7 @@ layout: default
 ---
 {% assign c = site.data.categories | where: "slug", page.categories.first | first %}
 <article class="post">
+  <a class="back" href="{% if c %}{{ '/categories/' | append: c.slug | append: '/' | relative_url }}{% else %}{{ '/posts/' | relative_url }}{% endif %}" data-back>← 돌아가기</a>
   <header class="post-head">
     <p class="post-meta mono">
       {% if c %}<a href="{{ '/categories/' | append: c.slug | append: '/' | relative_url }}">{{ c.name }}</a><span aria-hidden="true">·</span>{% endif %}

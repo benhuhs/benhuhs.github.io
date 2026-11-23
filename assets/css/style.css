@@ -438,7 +438,7 @@ img { max-width: 100%; height: auto; }
 
 /* ---------- tighter sidebar ↔ content spacing ---------- */
 @media (min-width: 901px) {
-  .shell { grid-template-columns: 240px minmax(0, 1fr); column-gap: 40px; }
+  .shell { grid-template-columns: 240px minmax(0, 1fr); column-gap: 64px; }
 }
 @media (min-width: 1360px) {
   .shell { grid-template-columns: 240px minmax(0, 1fr); column-gap: 36px; }

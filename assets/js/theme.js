@@ -83,3 +83,14 @@
   var link = document.querySelector('.search-link');
   if (link) link.addEventListener('click', function (e) { e.preventDefault(); history.replaceState(null, '', '#search'); go(true); });
 })();
+(function () {
+  var link = document.querySelector('[data-back]');
+  if (!link) return;
+  link.addEventListener('click', function (e) {
+    var ref = document.referrer;
+    if (ref && ref.indexOf(location.origin + '/') === 0 && history.length > 1) {
+      e.preventDefault();
+      history.back();
+    }
+  });
+})();
