@@ -1,7 +1,7 @@
 ---
 title: "회고록"
 category: techdocs
-tags: [knights-frontier, 회고]
+tags: [knights-frontier]
 ---
 
 나이츠프론티어를 계기로 지금까지의 활동을 돌아보았다.
